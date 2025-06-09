@@ -84,7 +84,7 @@ We now present the second algorithm for generating IEQs:
     + Build label vector $bold(y)$: $y_i = 1$ if document $i$ is relevant, else $0$
     + Apply `VarianceThreshold(threshold=variance_threshold)` on $bold(X)$
     + Apply `SelectKBest(chi2, k=num_after_chi2_terms)` on the reduced $bold(X)$
-    + Fit *Logistic Regression*: `model = LogisticRegression().fit(`$bold(X)$, $bold(y)$`)`
+    + Fit *Logistic Regression*: `model = LogisticRegression(solver="liblinear", penalty="l2").fit(`$bold(X)$, $bold(y)$`)`
     + Let `coef = model.coef_`  \# extract the coefficients of trained logistic regression model
     + Select top `num_expansion_terms` terms with highest positive coefficients
     + *return* `query_vector` with selected terms and corresponding weights from `coef`
