@@ -4,7 +4,7 @@
 // own imports
 #import "../customization/great-theorems-customized.typ": *
 
-= 3.5 Problem Statement and Hypothesis
+= Problem Statement and Hypothesis
 
 == Problem Statement  
 As we saw, many query expansion (QE) algorithms exist, each with its own term selection and weighting schemes. It has been observed that different methods perform better for some queries and worse for others. For certain queries, average precision (AP) improves after expansion using a particular algorithm, while for others, it decreases.
@@ -21,12 +21,12 @@ If a real QE method produces a query that is *close* to this IEQ (in some quanti
 === QE variants
 + We generated *80 QE variants* ($4 times 4 times 5 times 1 times 1=80$) using this parameter grid:
 
-  - *Expansion methods*: `[rm3, ceqe, loglogistic, spl]`
+  - *Expansion methods* (`expansion_method`): `[rm3, ceqe, loglogistic, spl]`
   - *Number of top documents* (`num_top_docs`): `[10, 20, 30, 40]`: how many retrieved documents are used for feedback
   - *Number of expansion terms* (`num_exp_terms`): `[15, 25, 35, 45, 55]`: how many new terms are added to the query
   - *Mixing parameter* (`mixing_param`): `0.5`: fixed weight for mixing the original query with expansion terms
 
-  Each method also uses a specific tuning parameter:
+  Each method also uses a specific `tuning_parameter`:
   #table(
     columns: (auto, auto, auto),
     table.header[*Method*][*Parameter Name*][*Value*],
@@ -53,7 +53,7 @@ We then generate the IEQ for each query (using algorithms described later). It a
 + Firstly, for each query, we measure the similarity between IEQ and the QE variants (using similarities described later).
 + For each query we make two lists of length 80,
   - one containing the similarity of each QE variant to the IEQ,
-  - the other containing the corresponding APs acheived by each QE variant.
+  - the other containing the corresponding APs achieved by each QE variant.
     ```
     qid:
       similarity_list = [sim_variant_1, sim_variant_2, ..., sim_variant_80]

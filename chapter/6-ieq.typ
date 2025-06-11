@@ -9,7 +9,7 @@
 We present the first algorithm for generating an *Ideal Expanded Query (IEQ)*:
 + This method first constructs the _oracle_ *Rocchio Vector* using the ground truth, which is obtained from the `qrel` file.
   See @definition:rocchio. The document vectors are assumed to have BM25 weights.
-+ We sort the terms of the Rocchio vector by their weights and trim the Rocchio vector upto top `num_expansion_terms`.
++ We sort the terms of the Rocchio vector by their weights in decreasing order and trim the Rocchio vector upto top `num_expansion_terms`.
 + We then select a `tweak_magnitude` from a `list_of_magnitudes`.
 + We iteratively go over the terms of the Rocchio vector one by one and tweak its weight by\ `new_weight = `(1 + `tweak_magnitude`) $times$ `current_weight`.\
   If the AP after tweaking is higher than the AP before tweaking, we accept the tweak. Otherwise we revert it.
@@ -20,12 +20,12 @@ We present the first algorithm for generating an *Ideal Expanded Query (IEQ)*:
   supplement: [Algorithm],
   pseudocode-list(booktabs: true, numbered-title: [#smallcaps[Oracle Rocchio Tuning]])[
     - *Input*: `qid`, `list_of_magnitudes`, `num_expansion_terms`, `ground_truth`
-    - \# The `ground_truth` is the `qrel` information.
-    - \# It can be a `dictionary` which maps `qid` $arrow$ `dictionary(docid` $arrow$ `relevance)`.
+    - #text(luma(100))[_\# The `ground_truth` is the `qrel` information._]
+    - #text(luma(100))[_\# It can be a `dictionary` which maps `qid` $arrow$ `dictionary(docid` $arrow$ `relevance)`._]
     + Construct _oracle_ Rocchio Vector `rocchio_vector` for query ID `qid` using `ground_truth`.
-    - \# `rocchio_vector` is a `dictionary` which maps `term` $arrow$ `weight`.
-    + `rocchio_vector.sort_by_weight()`
-    + `rocchio_vector.trim(num_expansion_terms)`  \# trim upto top `num_expansion_terms` terms
+    - #text(luma(100))[_\# `rocchio_vector` is a `dictionary` which maps `term` $arrow$ `weight`._]
+    + `rocchio_vector.sort_by_weight(reverse=True)` #text(luma(100))[_\# sort by weights in decreasing order_]
+    + `rocchio_vector.trim(num_expansion_terms)`  #text(luma(100))[_\# trim upto top `num_expansion_terms` terms_]
     + `current_AP = computeAP(rocchio_vector, ground_truth)`
     + *for* `tweak_magnitude` *in* `list_of_magnitudes`:
       + *for* `term` *in* `rocchio_vector`:
@@ -60,7 +60,7 @@ Henceforth, this method will be referred to as *IEQ0*.
   Since, generation of IEQ0 involves retrieval multiple times, it is computationally expensive. Hence, we limit it to `num_expansion_terms`=200.
 ]
 
-== Ideal Query Generation using Logistic Regression
+== Logistic Regression based Ideal Query Generation
 We now present the second algorithm for generating IEQs:
 + Read the `qrel` file to collect the relevant and non-relevant documents for query ID `qid`.
 + Construct document vectors for each of the relevant and non-relevant documents using BM25 weights.
@@ -82,9 +82,11 @@ We now present the second algorithm for generating IEQs:
     + Extract relevant and non-relevant documents for `qid` from `qrel` and construct BM25-weighted document vectors
     + Build design matrix $bold(X)$ by stacking all document vectors
     + Build label vector $bold(y)$: $y_i = 1$ if document $i$ is relevant, else $0$
+    - #text(luma(100))[_\# Apply feature selection using variance thresholding and $chi^2$ test_]
     + Apply `VarianceThreshold(threshold=variance_threshold)` on $bold(X)$
     + Apply `SelectKBest(chi2, k=num_after_chi2_terms)` on the reduced $bold(X)$
-    + Fit *Logistic Regression*: `model = LogisticRegression(solver="liblinear", penalty="l2").fit(`$bold(X)$, $bold(y)$`)`
+    - #text(luma(100))[_\# Fit *LogisticRegression* model_]
+    + `model = LogisticRegression(solver="liblinear", penalty="l2").fit(`$bold(X)$, $bold(y)$`)`
     + Let `coef = model.coef_`  \# extract the coefficients of trained logistic regression model
     + Select top `num_expansion_terms` terms with highest positive coefficients
     + *return* `query_vector` with selected terms and corresponding weights from `coef`
@@ -125,15 +127,15 @@ Henceforth, this method will be referred to as *IEQ1*.
     [IEQ1], [200], [0.8197]
   ),
   caption: [MAP of IEQs]
-)
+)<table:map_of_ieqs>
 We see both IEQ0 and IEQ1 achieve very high MAPs.
 
 In the figure below, we have plotted,\
-AP achieved on individual queries vs. $ln$(No. of relevant documents for the query)\
+AP achieved on individual queries _vs._ $ln$(No. of relevant documents for the query)\
 for both IEQ0 and IEQ1 (with `num_expansion_terms`=1000).
 #figure(
   image("../images/numrel_vs_ap.png", width: 70%),
-  caption: [AP vs. $ln$(No. of relevant documents) for IEQs]
+  caption: [AP _vs._ $ln$(No. of relevant documents) for IEQs]
 )
 The main observation is that in both cases:\
 *IEQ performs worse as the number of relevant documents increases.*
