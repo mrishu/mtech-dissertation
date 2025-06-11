@@ -49,7 +49,7 @@
 #include "chapter/9-pruning.typ"
 
 // ------------------- bibliography -------------------
-#bibliography("references.bib")
+#bibliography("references.yml", full: true)
 
 // ------------------- declaration -------------------
 // #include "chapter/999-declaration.typ"

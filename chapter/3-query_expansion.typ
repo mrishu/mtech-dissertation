@@ -107,14 +107,13 @@ This technique expands queries using terms that frequently co-occur with the que
 Here are the query expansion methods analyzed in this dissertation:
 
 • *RM3 (Relevance Model 3)*
-A probabilistic *pseudo-relevance feedback* method: it takes the top search results, finds commonly occurring terms with the original query, and adds those terms to improve retrieval.
-
-• *SPL (Smooth Power‑Law)*  
-A statistical method that models how often words appear using a *smoothed power‑law distribution*. It selects useful terms that follow this natural frequency pattern, helping to catch important but less frequent words.
+A probabilistic *pseudo-relevance feedback* method: it takes the top search results, finds commonly occurring terms with the original query, and adds those terms to improve retrieval. @lavrenko2001
 
 • *Log‑Logistic Model*
-Uses a *log‑logistic distribution* to analyze word frequency patterns. It chooses expansion terms whose occurrence matches the statistical behavior of relevant terms.
+This method uses a special formula (log-logistic distribution) to find terms that appear more often in some documents than expected. Such terms are considered important and used to expand the query. @clinchant2010
+
+• *SPL (Smooth Power‑Law)*  
+SPL is similar to LogLogistic but uses a different math formula (smoothed power-law) to find “bursty” terms—words that tend to repeat a lot in relevant documents. These are added to improve the query. @clinchant2010
 
 • *CEQE (Contextualized Embeddings for Query Expansion)*
-A modern neural method using models like *BERT* to understand the query’s meaning. It finds context-aware terms for expansion, capturing semantic nuances and improving results.
-
+A modern neural method using models like *BERT* to understand the query’s meaning. It finds context-aware terms for expansion, capturing semantic nuances and improving results. @naseri2021

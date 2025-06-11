@@ -63,3 +63,11 @@ We then generate the IEQ for each query (using algorithms described later). It a
 + Finally, we take the average of these similarities across all 250 queries and report the average Pearson, Kendall and Spearman correlations.
 
 According to our hypothesis, we expect high correlations between these two lists.
+
+== Software Used
+- We used *PyLucene 10.0.0* (with Python 3.11) as the underlying search engine library for indexing and retrieval.
+- We used *pytrec_eval* for evaluation of the retrieval results @pytrec_eval.
+- We also used *trec_eval* for evaluating retrieval results.\
+  Link: https://github.com/usnistgov/trec_eval.
+- Other software used includes *NumPy*, *SciPy*, *Matplotlib*, and *tqdm*.
+- We used *GNU Parallel* for parallelization.

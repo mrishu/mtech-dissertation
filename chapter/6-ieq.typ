@@ -6,7 +6,7 @@
 
 = Ideal Query Generation
 == Oracle Rocchio Vector tuning
-We present the first algorithm for generating an *Ideal Expanded Query (IEQ)*:
+We present the first algorithm for generating an *Ideal Expanded Query (IEQ)*. This is based on the *Dynamic Feedback Optimization (DFO)* scheme as described in @buckley1995:
 + This method first constructs the _oracle_ *Rocchio Vector* using the ground truth, which is obtained from the `qrel` file.
   See @definition:rocchio. The document vectors are assumed to have BM25 weights.
 + We sort the terms of the Rocchio vector by their weights in decreasing order and trim the Rocchio vector upto top `num_expansion_terms`.

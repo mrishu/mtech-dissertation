@@ -1,0 +1,73 @@
+lavrenko2001:
+  type: article
+  title: "Relevance‑based language models"
+  author:
+    - "Victor Lavrenko"
+    - "W. Bruce Croft"
+  parent:
+    type: proceedings
+    title: "Proceedings of the 24th annual international ACM SIGIR conference on Research and development in information retrieval"
+  date: 2001
+  page-range: "120–127"
+  serial-number:
+    doi: "10.1145/383952.383972"
+
+naseri2021:
+  type: conference
+  title: "CEQE: Contextualized Embeddings for Query Expansion"
+  author:
+    - "Shahrzad Naseri"
+    - "Jeffrey Dalton"
+    - "Andrew Yates"
+    - "James Allan"
+  parent:
+    type: proceedings
+    title: "Advances in Information Retrieval – 43rd European Conference on IR Research (ECIR 2021)"
+  date: 2021
+  page-range: "467–482"
+  serial-number:
+    doi: "10.1007/978-3-030-72113-8_31"
+
+clinchant2010:
+  type: article
+  title: "Information‑Based Models for Ad Hoc IR"
+  author:
+    - "Stéphane Clinchant"
+    - "Eric Gaussier"
+  parent:
+    type: proceedings
+    title: "Proceedings of the 33rd international ACM SIGIR conference on Research and development in information retrieval"
+  publisher: "ACM"
+  date: 2010
+  page-range: "234–241"
+  serial-number:
+    doi: "10.1145/1835449.1835490"
+
+buckley1995:
+  type: article
+  title: "Optimization of relevance feedback weights"
+  author:
+    - "Chris Buckley"
+    - "Gerard Salton"
+  parent:
+    type: proceedings
+    title: "SIGIR '95: Proceedings of the 18th annual international ACM SIGIR conference on Research and development in information retrieval"
+  date: 1995
+  page-range: "351–357"
+  serial-number:
+    doi: "10.1145/215206.215383"
+
+pytrec_eval:
+  type: repository
+  title: "Pytrec_eval: An Extremely Fast Python Interface to trec_eval"
+  author:
+    - "Van Gysel"
+    - "Christophe and de Rijke"
+    - "Maarten"
+  date: 2018
+  parent:
+    type: proceedings
+    title: "SIGIR '18: The 41st International ACM SIGIR Conference on Research & Development in Information Retrieval"
+  serial-number:
+    doi: "10.1145/3209978.3210065"
+  page-range: "873-876"
