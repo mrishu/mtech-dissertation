@@ -87,7 +87,7 @@ We now present the second algorithm for generating IEQs:
     + Apply `SelectKBest(chi2, k=num_after_chi2_terms)` on the reduced $bold(X)$
     - #text(luma(100))[_\# Fit *LogisticRegression* model_]
     + `model = LogisticRegression(solver="liblinear", penalty="l2").fit(`$bold(X)$, $bold(y)$`)`
-    + Let `coef = model.coef_`  \# extract the coefficients of trained logistic regression model
+    + Let `coef = model.coef_`  #text(luma(100))[_\# extract the coefficients of trained logistic regression model_]
     + Select top `num_expansion_terms` terms with highest positive coefficients
     + *return* `query_vector` with selected terms and corresponding weights from `coef`
   ],
