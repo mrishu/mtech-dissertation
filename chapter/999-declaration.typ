@@ -5,10 +5,14 @@
 
 #heading(level: 2, outlined: false, numbering: none)[Declaration]
 
-Typically, you need to declare that e.g. you wrote everything on your own. This university dependent statement is usually required to be signed by the author.
+I hereby declare that the dissertation titled *"Explainability of Query Expansions"* submitted by me to the *Indian Statistical Institute, Kolkata*, in partial fulfillment of the requirements for the degree of *Master of Technology in Computer Science*, is my own work carried out under the supervision of *Prof. Mandar Mitra*.
+
+This dissertation has not been submitted to any other university or institution for the award of any degree or diploma. All sources of information and data used have been appropriately acknowledged.
+
+I certify that the work presented is free from plagiarism and is a result of my own independent research and analysis.
 #v(1cm)
-#align(left)[Example City, #datetime.today().display()]
+#align(left)[Kolkata, #datetime.today().display()]
 #align(right)[
 #line(length: 40%)
- Stuart Dent
+ Aditya Dutta
 ]

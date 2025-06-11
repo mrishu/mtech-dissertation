@@ -28,6 +28,7 @@
 
   // content that needs to be placed differently then normal chapters
   abstract: none,
+  acknowledgement: none,
 
   // colors
   cover-color: rgb("#800080"),
@@ -287,6 +288,12 @@ pagebreak()
 set text(font: body-font)  // body font
 if abstract != none{
   abstract
+}
+pagebreak()
+
+set text(font: body-font)  // body font
+if acknowledgement != none{
+  acknowledgement
 }
 
 

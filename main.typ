@@ -25,7 +25,8 @@
   cover-font: "Libertinus Serif",
 
   // chapters that need special placement
-  abstract: include "chapter/0-abstract.typ",
+  abstract: include "chapter/0-abstract.typ", 
+  acknowledgement: include "chapter/01-acknowledgement.typ",
 
   // equation settings
   equate-settings: (breakable: true, sub-numbering: true, number-mode: "label"),
@@ -52,4 +53,4 @@
 #bibliography("references.yml", full: true)
 
 // ------------------- declaration -------------------
-// #include "chapter/999-declaration.typ"
+#include "chapter/999-declaration.typ"
