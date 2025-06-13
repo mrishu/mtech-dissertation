@@ -80,4 +80,4 @@ The *MAP achieved* by IEQ0Restricted is *0.8256*, which is lower than the MAP ac
   caption: [Average Correlations for IEQ0 and IEQ0Restricted (using `n2_similarity`)]
 )
 
-*Conclusion*: We see that this doesn't result in improvement in the correlations. This is counter-intuitive because we expected that the restricted ground truth will produce IEQs with better intersection with the EQs.
+*Conclusion*: We see that this doesn't result in improvement in the correlations. This is counter-intuitive because we expected that the restricted ground truth to produce IEQs with better intersection with the EQs.
