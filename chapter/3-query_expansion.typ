@@ -9,7 +9,7 @@
 
 == Vocabulary Mismatch Problem
 
-The *vocabulary mismatch problem* occurs when users and relevant documents use different words to express the same concept. This is a major hurdle in information retrieval. Even if a document is relevant, it may not be retrieved simply because it doesn't share the same vocabulary as the query.
+The *vocabulary mismatch problem* occurs when users and relevant documents use different words to express the same concept. This is a major hurdle in traditional/keyword-based information retrieval. Even if a document is relevant, it may not be retrieved simply because it doesn't share the same vocabulary as the query.
 
 #example(title: "Vocabulary Mismatch")[
 A user searches for: `laptop overheating`.
@@ -21,7 +21,7 @@ Since these terms don’t exactly match the user’s query, the documents may no
 
 == What is Query Expansion?
 
-*Query Expansion (QE)* aims to solve this problem by adding related words or phrases to the user's original query. The goal is to capture different ways the same idea might be expressed in the document collection, improving recall and precision.
+*Query Expansion (QE)* adresses this issue by augmenting the query with related words or phrases. The goal is to capture different ways the same idea might be expressed in the document collection, improving recall and precision.
 
 #example(title: "Query Expansion")[
 Original Query:
@@ -30,12 +30,12 @@ Original Query:
 After Query Expansion:
 `laptop overheating thermal throttling fan problems cooling issues`.
 
-This reformulated query is more likely to match relevant documents.
+This reformulated query increases the likelihood of retrieving relevant documents.
 ]
 
 == Query Expansion Techniques
 
-Several algorithms exist for expanding queries. These techniques can be broadly categorized into:
+Several algorithms exist for expanding queries @carpineto2012. These techniques can be broadly categorized into:
 
 === Relevance Feedback (RF)
 
@@ -58,7 +58,7 @@ Here:
 - $bold(q_"new")$ is the modified query vector.
 - $bold(q_"orig")$ is the original query vector.
 - $D_r $ and $D_"nr"$ are sets of relevant and non-relevant documents.
-- $alpha$, $beta$, and $gamma$ are hyperparameters that balance the contributions.
+- $alpha$, $beta$, and $gamma$ are parameters that balance the contributions.
 ]<definition:rocchio>
 
 The Rocchio method effectively pushes the query vector closer to relevant documents and away from non-relevant ones in the vector space.
@@ -77,7 +77,7 @@ Pseudo-Relevance Feedback assumes that the *top-ranked documents* returned by an
 
 === Thesaurus-Based Expansion
 
-This method uses resources like WordNet or domain-specific thesauri to expand a query with synonyms or related terms.
+This method uses resources like WordNet @miller-1994-wordnet or domain-specific thesauri to expand a query with synonyms or related terms.
 
 For example, a query containing `car` may be expanded to include `automobile`, `vehicle`, or `motorcar`.
 
@@ -106,14 +106,14 @@ This technique expands queries using terms that frequently co-occur with the que
 
 Here are the query expansion methods analyzed in this dissertation:
 
-• *RM3 (Relevance Model 3)*
+• *RM3 (Relevance Model 3)*:
 A probabilistic *pseudo-relevance feedback* method: it takes the top search results, finds commonly occurring terms with the original query, and adds those terms to improve retrieval. @lavrenko2001
 
-• *Log‑Logistic Model*
+• *Log‑Logistic Model*:
 This method uses a special formula (log-logistic distribution) to find terms that appear more often in some documents than expected. Such terms are considered important and used to expand the query. @clinchant2010
 
-• *SPL (Smooth Power‑Law)*  
-SPL is similar to LogLogistic but uses a different math formula (smoothed power-law) to find “bursty” terms—words that tend to repeat a lot in relevant documents. These are added to improve the query. @clinchant2010
+• *SPL (Smooth Power‑Law)*:
+SPL is similar to LogLogistic but uses a different math formula (smoothed power-law) to find “bursty” terms i.e. words that tend to repeat a lot in relevant documents. These are added to improve the query. @clinchant2010
 
-• *CEQE (Contextualized Embeddings for Query Expansion)*
-A modern neural method using models like *BERT* to understand the query’s meaning. It finds context-aware terms for expansion, capturing semantic nuances and improving results. @naseri2021
+• *CEQE (Contextualized Embeddings for Query Expansion)*:
+A modern neural method using models like *BERT* @bert2018 to understand the query’s meaning. It finds context-aware terms for expansion, capturing semantic nuances and improving results. @naseri2021

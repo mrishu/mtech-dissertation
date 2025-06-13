@@ -7,8 +7,8 @@
 
 #show: template.with(
   author: "Aditya Dutta",
-  title: "Explanability of Query Expansions",
-  supervisor1: "Prof. Mandar Mitra",
+  title: "Explaining Query Expansion Algorithms",
+  supervisor1: "Mandar Mitra",
   supervisor2: "",
   degree: "M.Tech",
   program: "Computer Science",
@@ -40,9 +40,9 @@
 
 // ------------------- content -------------------
 #include "chapter/1-intro.typ"
-#include "chapter/2-dataset.typ"
 #include "chapter/3-query_expansion.typ"
 #include "chapter/4-hypothesis.typ"
+// #include "chapter/2-dataset.typ"
 #include "chapter/5-similarities.typ"
 #include "chapter/6-ieq.typ"
 #include "chapter/7-results.typ"

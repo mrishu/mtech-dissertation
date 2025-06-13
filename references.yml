@@ -71,3 +71,68 @@ pytrec_eval:
   serial-number:
     doi: "10.1145/3209978.3210065"
   page-range: "873-876"
+
+miller-1994-wordnet:
+  type: article
+  title: "{W}ord{N}et: A Lexical Database for {E}nglish"
+  author: "Miller, George A."
+  parent:
+    type: proceedings
+    title: "{H}uman {L}anguage {T}echnology: Proceedings of a Workshop held at {P}lainsboro, {N}ew {J}ersey, {M}arch 8-11, 1994"
+  date: "1994"
+  url: "https://aclanthology.org/H94-1111/"
+
+bert2018:
+  type: article
+  title: "BERT: Pre‑training of Deep Bidirectional Transformers for Language Understanding"
+  author:
+    - "Devlin, Jacob"
+    - "Chang, Ming‑Wei"
+    - "Lee, Kenton"
+    - "Toutanova, Kristina"
+  date: 2018
+  parent:
+    type: periodical
+    title:
+      value: "CoRR"
+    volume: "abs/1810.04805"
+  serial-number:
+    eprinttype: "arXiv"
+    eprint: "1810.04805"
+    url: "http://arxiv.org/abs/1810.04805"
+
+carpineto2012:
+  type: article
+  title: "A Survey of Automatic Query Expansion in Information Retrieval"
+  author:
+    - "Carpineto, Claudio"
+    - "Romano, Giovanni"
+  date: 2012-01
+  parent:
+    type: periodical
+    title: "ACM Computing Surveys"
+    volume: "44"
+    issue: "1"
+    issn: "0360-0300"
+    publisher: "Association for Computing Machinery"
+    location: "New York, NY, USA"
+  serial-number:
+    doi: "10.1145/2071389.2071390"
+    url: "https://doi.org/10.1145/2071389.2071390"
+  page-range: 1-50
+
+soumajit:
+  type: thesis
+  author:
+  - "Soumajit Pramanik"
+  title: Understanding the Performance of Expanded Queries
+  organization: "Indian Statistical Institute"
+  date: 2013
+  
+snehasish:
+  type: thesis
+  author:
+  - "Snehasish Mukherjee"
+  title: Relative Query Performance Prediction using Ideal Expanded Query
+  organization: "Indian Statistical Institute"
+  date: 2012

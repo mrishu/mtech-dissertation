@@ -5,7 +5,7 @@
 
 #heading(level: 2, outlined: false, numbering: none)[Declaration]
 
-I hereby declare that the dissertation titled *"Explainability of Query Expansions"* submitted by me to the *Indian Statistical Institute, Kolkata*, in partial fulfillment of the requirements for the degree of *Master of Technology in Computer Science*, is my own work carried out under the supervision of *Prof. Mandar Mitra*.
+I hereby declare that the dissertation titled *"Explaining Query Expansion Algorithms"* submitted by me to the *Indian Statistical Institute, Kolkata*, in partial fulfillment of the requirements for the degree of *Master of Technology in Computer Science*, is my own work carried out under the supervision of *Prof. Mandar Mitra*.
 
 This dissertation has not been submitted to any other university or institution for the award of any degree or diploma. All sources of information and data used have been appropriately acknowledged.
 

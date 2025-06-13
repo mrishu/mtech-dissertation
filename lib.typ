@@ -266,7 +266,7 @@ align(center, text(3em, weight: 700, title))
 line(start: (10%, 0pt), length: 80%, stroke: cover-color)
 v(5fr)
 //author
-align(center, text(1.5em, weight: 700, degree + " Disseration"))
+align(center, text(1.5em, weight: 700, degree + " Dissertation"))
 //study program
 if program != none {
   align(center, text(1.3em, weight: 100, program))
