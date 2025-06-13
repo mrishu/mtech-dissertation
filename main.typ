@@ -10,7 +10,7 @@
   title: "Explaining Query Expansion Algorithms",
   supervisor1: "Mandar Mitra",
   supervisor2: "",
-  degree: "M.Tech",
+  degree: "M.Tech.",
   program: "Computer Science",
   university: "Indian Statistical Institute",
   institute: "",
