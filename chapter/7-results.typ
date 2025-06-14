@@ -29,8 +29,8 @@ https://ir-datasets.com/trec-robust04.html]
     [Untweaked Oracle Rocchio], [200], [0.5121],
     [Untweaked Oracle Rocchio], [1000], [0.5465],
     [IEQ0], [200], [0.8919],
-    [IEQ1], [1000], [0.9026],
-    [IEQ1], [200], [0.8197]
+    [IEQ1#sub("1000")], [1000], [0.9026],
+    [IEQ1#sub("200")], [200], [0.8197]
   ),
   caption: [MAP of IEQs]
 )<table:map_of_ieqs>

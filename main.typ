@@ -54,3 +54,4 @@
 
 // ------------------- declaration -------------------
 #include "chapter/999-declaration.typ"
+#include "chapter/99-supervisor.typ"
