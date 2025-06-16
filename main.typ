@@ -25,7 +25,7 @@
   cover-font: "Libertinus Serif",
 
   // chapters that need special placement
-  abstract: include "chapter/0-abstract.typ", 
+  abstract: include "chapter/00-abstract.typ", 
   acknowledgement: include "chapter/01-acknowledgement.typ",
 
   // equation settings
@@ -40,18 +40,17 @@
 
 // ------------------- content -------------------
 #include "chapter/1-intro.typ"
-#include "chapter/3-query_expansion.typ"
-#include "chapter/4-hypothesis.typ"
-// #include "chapter/2-dataset.typ"
-#include "chapter/5-similarities.typ"
-#include "chapter/6-ieq.typ"
-#include "chapter/7-results.typ"
-#include "chapter/8-restricted_ground_truth.typ"
-#include "chapter/9-pruning.typ"
+#include "chapter/2-query_expansion.typ"
+#include "chapter/3-hypothesis.typ"
+#include "chapter/4-similarities.typ"
+#include "chapter/5-ieq.typ"
+#include "chapter/6-results.typ"
+#include "chapter/7-restricted_ground_truth.typ"
+#include "chapter/8-pruning.typ"
 
 // ------------------- bibliography -------------------
 #bibliography("references.yml", full: true)
 
 // ------------------- declaration -------------------
-#include "chapter/999-declaration.typ"
-#include "chapter/99-supervisor.typ"
+#include "chapter/99-declaration.typ"
+#include "chapter/999-supervisor.typ"

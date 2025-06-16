@@ -15,6 +15,5 @@ The dissertation meets all the requirements as per the regulations of the Instit
 #line(length: 40%)
  Mandar Mitra,\
  Professor, Computer Vision & Pattern Recognition Unit,\
- Centre for Artificial Intelligence and Machine Learning,\
  Indian Statistical Institute, Kolkata
 ]
